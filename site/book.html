@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book a First Lesson &mdash; Jeremy Poole Johnson Piano</title>
+<meta name="description" content="Book a 45-minute first piano lesson in Brunswick West, Melbourne. $50, no obligation. Wednesday to Friday, daytime and evening.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="proto">Prototype &mdash; built from <b>STRATEGY.md</b>. This form is not connected; the real one would be Cal.com + Stripe.</div>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="index.html">Jeremy Poole Johnson<span>Piano &middot; Brunswick West</span></a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="adults.html">For Adults</a>
+      <a href="kids.html">Kids &amp; Teens</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a class="btn" href="book.html" aria-current="page">Book a first lesson</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Book a first lesson</h1>
+    <p class="lede">45 minutes, $50, no obligation. Pick a time that suits you &mdash; you&rsquo;ll get a confirmation straight away.</p>
+    <ul class="meta">
+      <li>Wednesday to Friday</li>
+      <li>10am &ndash; 8pm</li>
+      <li>Brunswick West</li>
+    </ul>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="grid g2">
+      <div>
+        <div class="video" style="aspect-ratio:4/3">
+          <div class="play">&#128197;</div>
+          <b>Booking calendar</b>
+          <small>Cal.com embed goes here &mdash; real availability, synced to his calendar, payment taken at booking via Stripe.</small>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size:1.4rem">What happens next</h2>
+        <p>You pick a time and pay the $50. You&rsquo;ll get a confirmation with the address, where to park, and a note saying you don&rsquo;t need to prepare anything &mdash; because you don&rsquo;t.</p>
+        <p>I&rsquo;ll send a reminder the day before.</p>
+        <p>Then you turn up, we have a play, and we work out what you&rsquo;re after. That&rsquo;s the whole thing.</p>
+        <div class="highlight" style="margin-top:1.5rem">
+          <p style="margin:0"><strong>Haven&rsquo;t played in twenty years?</strong> That&rsquo;s most of my students. You&rsquo;re not going to surprise me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Or send me the details and I&rsquo;ll come back to you</h2>
+    <p class="lede">If you&rsquo;d rather ask something first, that&rsquo;s completely normal. Nothing here is a difficult question.</p>
+    <form class="book" onsubmit="event.preventDefault();this.querySelector('.done').hidden=false;">
+      <label>Your name
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>Phone
+        <span class="hint">Optional, but a text is usually quicker than an email.</span>
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
+      <label>Who are the lessons for?
+        <select name="who">
+          <option>Me &mdash; adult beginner</option>
+          <option>Me &mdash; played before, want to get back into it</option>
+          <option>Me &mdash; I play already, want jazz / harmony / improvisation</option>
+          <option>My child</option>
+          <option>My teenager</option>
+        </select>
+      </label>
+      <label>Have you played before?
+        <span class="hint">Roughly is fine. &ldquo;A bit at school, thirty years ago&rdquo; is a perfectly good answer.</span>
+        <textarea name="experience"></textarea>
+      </label>
+      <label>Anything you&rsquo;d love to be able to play?
+        <span class="hint">A song, a style, or just &ldquo;no idea yet&rdquo;.</span>
+        <textarea name="goal"></textarea>
+      </label>
+      <label>Do you have a piano or keyboard at home?
+        <select name="instrument">
+          <option>Yes &mdash; an acoustic piano</option>
+          <option>Yes &mdash; a digital piano or keyboard</option>
+          <option>No, not yet</option>
+          <option>Not sure if what I have is any good</option>
+        </select>
+      </label>
+      <label>How did you hear about me?
+        <input type="text" name="source">
+      </label>
+      <div class="btn-row" style="margin-top:.5rem">
+        <button class="btn" type="submit">Send it</button>
+      </div>
+      <p class="done reassure" hidden style="color:var(--accent-ink);font-style:normal;font-weight:600">Thanks &mdash; that would have sent in the real thing. (Prototype form.)</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <h2>Other ways to reach me</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Text me</h3>
+        <p><strong>0400 000 000</strong></p>
+        <p>Genuinely the easiest option, and plenty of people prefer it. I&rsquo;ll usually reply the same day.</p>
+      </div>
+      <div class="card">
+        <h3>Where I am</h3>
+        <p><strong>Brunswick West, VIC</strong></p>
+        <p>Full address comes with your booking confirmation. Street parking is easy, and it&rsquo;s a short walk from the tram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Jeremy Poole Johnson</h3>
+        <p>Piano lessons in Brunswick West, Melbourne.<br>Jazz, contemporary and classical foundations.<br>Beginners to advanced.</p>
+      </div>
+      <div>
+        <h3>Lessons</h3>
+        <ul>
+          <li><a href="adults.html">For adults</a></li>
+          <li><a href="kids.html">Kids &amp; teens</a></li>
+          <li><a href="pricing.html">Pricing &amp; availability</a></li>
+          <li><a href="about.html">About Jeremy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="book.html">Book a first lesson</a></li>
+          <li>Text: 0400 000 000</li>
+          <li>Wednesday to Friday</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Prototype site &mdash; placeholder phone number, testimonial and videos. &copy; 2026 Jeremy Poole Johnson.</p>
+  </div>
+</footer>
+</body>
+</html>

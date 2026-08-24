@@ -1,0 +1,157 @@
+/* Jeremy Poole Johnson — prototype styles
+   Warm, plain, permission-giving. Deliberately NOT a moody jazz press site. */
+
+:root{
+  --paper:      #FBF7F1;
+  --paper-2:    #F4ECE1;
+  --ink:        #1D1A17;
+  --muted:      #655B50;
+  --accent:     #A94E1B;
+  --accent-ink: #7E3A13;
+  --accent-soft:#F7E8DB;
+  --rule:       #E5DACB;
+  --max:        66rem;
+  --narrow:     42rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,.display{
+  font-family:Fraunces,"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-0.015em;
+  margin:0 0 .5em;
+}
+h1{font-size:clamp(2.1rem,5.2vw,3.5rem)}
+h2{font-size:clamp(1.6rem,3.2vw,2.25rem);margin-top:0}
+h3{font-size:1.2rem;line-height:1.25}
+p{margin:0 0 1.1em}
+a{color:var(--accent-ink);text-underline-offset:.18em}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:var(--narrow)}
+section{padding:4.5rem 0}
+section.tight{padding:3rem 0}
+.band{background:var(--paper-2);border-block:1px solid var(--rule)}
+.lede{font-size:1.2rem;color:var(--muted);max-width:38rem}
+
+/* ---- header ---- */
+header.site{
+  position:sticky;top:0;z-index:20;
+  background:rgba(251,247,241,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.bar{display:flex;align-items:center;gap:1.5rem;padding:.9rem 1.5rem;max-width:var(--max);margin:0 auto;flex-wrap:wrap}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.06rem;text-decoration:none;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.brand span{display:block;font-family:Inter,sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+nav.site{margin-left:auto;display:flex;gap:1.35rem;align-items:center;flex-wrap:wrap}
+nav.site a{color:var(--muted);text-decoration:none;font-size:.94rem}
+nav.site a:hover,nav.site a[aria-current]{color:var(--ink)}
+nav.site a[aria-current]{box-shadow:inset 0 -2px 0 var(--accent)}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-block;padding:.85rem 1.5rem;border-radius:2rem;
+  background:var(--accent);color:#fff;text-decoration:none;
+  font-weight:600;font-size:1rem;border:1px solid var(--accent);
+  transition:background .15s ease;
+}
+.btn:hover{background:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent-ink)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.btn-row{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;margin:1.6rem 0 0}
+.reassure{font-size:.95rem;color:var(--muted);margin:.9rem 0 0;font-style:italic}
+
+/* ---- hero ---- */
+.hero{padding:4.5rem 0 3rem}
+.hero h1{max-width:16ch}
+.meta{
+  display:flex;flex-wrap:wrap;gap:.5rem .75rem;margin:1.75rem 0 0;
+  list-style:none;padding:0;font-size:.92rem;
+}
+.meta li{background:var(--accent-soft);color:var(--accent-ink);padding:.3rem .8rem;border-radius:1rem;font-weight:500}
+
+/* ---- video placeholder ---- */
+.video{
+  border:2px dashed var(--rule);border-radius:.9rem;background:var(--paper-2);
+  aspect-ratio:16/9;display:grid;place-content:center;text-align:center;
+  padding:1.5rem;gap:.4rem;
+}
+.video .play{
+  width:3.25rem;height:3.25rem;border-radius:50%;background:var(--accent);
+  margin:0 auto .6rem;display:grid;place-content:center;color:#fff;font-size:1.05rem;
+}
+.video b{font-size:1.02rem}
+.video small{color:var(--muted);max-width:34ch;display:block;margin:0 auto;line-height:1.5}
+
+/* ---- grids & cards ---- */
+.grid{display:grid;gap:1.5rem}
+.g2{grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(14.5rem,1fr))}
+.card{background:#fff;border:1px solid var(--rule);border-radius:.75rem;padding:1.5rem}
+.card h3{margin-bottom:.4rem}
+.card p:last-child{margin-bottom:0}
+.card .num{font-family:Fraunces,Georgia,serif;font-size:.85rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.5rem}
+
+/* ---- the "no" list ---- */
+.nots{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.7rem}
+.nots li{padding-left:1.9rem;position:relative;font-size:1.08rem}
+.nots li::before{content:"—";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* ---- pricing ---- */
+table.rates{width:100%;border-collapse:collapse;margin:1.5rem 0 0;font-size:1rem}
+table.rates th,table.rates td{text-align:left;padding:.85rem .5rem;border-bottom:1px solid var(--rule)}
+table.rates th{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+table.rates td.price{font-family:Fraunces,Georgia,serif;font-weight:600;white-space:nowrap}
+.highlight{background:var(--accent-soft);border:1px solid #E8CDB6;border-radius:.75rem;padding:1.5rem}
+.highlight p:last-child{margin-bottom:0}
+
+/* ---- quote ---- */
+blockquote.pull{
+  margin:0;padding:1.5rem 0 1.5rem 1.5rem;border-left:3px solid var(--accent);
+  font-family:Fraunces,Georgia,serif;font-size:1.3rem;line-height:1.4;
+}
+blockquote.pull cite{display:block;font-family:Inter,sans-serif;font-size:.9rem;font-style:normal;color:var(--muted);margin-top:.8rem}
+
+/* ---- faq ---- */
+.faq{border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{padding:1.1rem 0;cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 0 1.2rem;color:var(--muted);max-width:46rem}
+.faq .a p:last-child{margin-bottom:0}
+
+/* ---- form ---- */
+form.book{display:grid;gap:1.15rem;max-width:34rem;margin-top:1.5rem}
+form.book label{display:grid;gap:.35rem;font-weight:600;font-size:.94rem}
+form.book input,form.book select,form.book textarea{
+  font:inherit;font-weight:400;padding:.7rem .8rem;border:1px solid var(--rule);
+  border-radius:.5rem;background:#fff;color:var(--ink);width:100%;
+}
+form.book textarea{min-height:5rem;resize:vertical}
+form.book .hint{font-weight:400;color:var(--muted);font-size:.86rem}
+
+/* ---- footer ---- */
+footer.site{background:var(--paper-2);border-top:1px solid var(--rule);padding:3rem 0;font-size:.94rem;color:var(--muted)}
+footer.site a{color:var(--accent-ink)}
+footer.site .cols{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+footer.site h3{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;font-family:Inter,sans-serif;font-weight:600;color:var(--ink)}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+footer.site .fine{margin:2.5rem 0 0;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:.85rem}
+
+.proto{background:var(--ink);color:var(--paper);font-size:.8rem;text-align:center;padding:.5rem 1rem;letter-spacing:.02em}
+.proto b{color:#F0A776}
