@@ -1,5 +1,6 @@
 # Pages CMS configuration — https://pagescms.org/docs/configuration/
 # Jeremy edits these at app.pagescms.org; every save commits to GitHub and Vercel rebuilds the site.
+# Sections are ordered as they first appear on the site (home page top to bottom, then the other pages).
 
 content:
   - name: pages
@@ -116,6 +117,34 @@ content:
             label: Google description
             type: text
             description: Shown under the title in search results. Keep under ~155 characters.
+  - name: site
+    label: Contact & general
+    type: file
+    path: site/src/_data/site.json
+    format: json
+    fields:
+      - name: location
+        label: Suburb
+        type: string
+      - name: days
+        label: Teaching days (short)
+        type: string
+        description: Shown in the footer and page summaries, e.g. Wednesday to Friday
+      - name: times_of_day
+        label: Times of day (short)
+        type: string
+        description: Shown under the home page heading, e.g. Daytime & evening
+      - name: phone
+        label: Phone number
+        type: string
+      - name: hours
+        label: Teaching hours (short)
+        type: string
+        description: e.g. 10am – 8pm
+      - name: show_prototype_notes
+        label: Show prototype banner
+        type: boolean
+        description: Turn off when the site goes live
   - name: lessons
     label: Lessons & prices
     type: file
@@ -236,55 +265,6 @@ content:
             label: Price
             type: string
             description: Include the $ sign, e.g. $50
-  - name: availability
-    label: Available times
-    type: file
-    path: site/src/_data/availability.json
-    format: json
-    fields:
-      - name: times
-        label: Teaching days
-        type: object
-        list: true
-        fields:
-          - name: day
-            label: Day
-            type: string
-          - name: hours
-            label: Hours
-            type: string
-            description: e.g. 10am to 8pm
-      - name: note
-        label: Note under the times
-        type: text
-  - name: site
-    label: Contact & general
-    type: file
-    path: site/src/_data/site.json
-    format: json
-    fields:
-      - name: phone
-        label: Phone number
-        type: string
-      - name: location
-        label: Suburb
-        type: string
-      - name: days
-        label: Teaching days (short)
-        type: string
-        description: Shown in the footer and page summaries, e.g. Wednesday to Friday
-      - name: hours
-        label: Teaching hours (short)
-        type: string
-        description: e.g. 10am – 8pm
-      - name: times_of_day
-        label: Times of day (short)
-        type: string
-        description: Shown under the home page heading, e.g. Daytime & evening
-      - name: show_prototype_notes
-        label: Show prototype banner
-        type: boolean
-        description: Turn off when the site goes live
   - name: videos
     label: Videos
     type: file
@@ -305,6 +285,70 @@ content:
       - name: testimonial
         label: Student testimonial video (not shown yet)
         type: string
+  - name: text
+    label: Page text
+    type: group
+    items:
+      - name: home-jazz
+        label: Home — I play jazz for a living
+        type: file
+        path: site/src/content/home-jazz.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: pricing-when
+        label: Pricing — when lessons happen
+        type: file
+        path: site/src/content/pricing-when.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: about-bio
+        label: About — bio
+        type: file
+        path: site/src/content/about-bio.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: about-how-i-teach
+        label: About — how I teach
+        type: file
+        path: site/src/content/about-how-i-teach.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: about-what-i-teach
+        label: About — what I teach (one per line)
+        type: file
+        path: site/src/content/about-what-i-teach.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
   - name: testimonials
     label: Testimonials
     type: file
@@ -344,67 +388,24 @@ content:
         type: text
         required: true
         description: Leave a blank line between paragraphs. **bold** and *italic* work.
-  - name: text
-    label: Page text
-    type: group
-    items:
-      - name: about-bio
-        label: About — bio
-        type: file
-        path: site/src/content/about-bio.md
-        format: yaml-frontmatter
+  - name: availability
+    label: Available times
+    type: file
+    path: site/src/_data/availability.json
+    format: json
+    fields:
+      - name: times
+        label: Teaching days
+        type: object
+        list: true
         fields:
-          - name: body
-            label: Text
-            type: rich-text
-            options:
-              format: markdown
-              media: false
-      - name: about-how-i-teach
-        label: About — how I teach
-        type: file
-        path: site/src/content/about-how-i-teach.md
-        format: yaml-frontmatter
-        fields:
-          - name: body
-            label: Text
-            type: rich-text
-            options:
-              format: markdown
-              media: false
-      - name: about-what-i-teach
-        label: About — what I teach (one per line)
-        type: file
-        path: site/src/content/about-what-i-teach.md
-        format: yaml-frontmatter
-        fields:
-          - name: body
-            label: Text
-            type: rich-text
-            options:
-              format: markdown
-              media: false
-      - name: home-jazz
-        label: Home — I play jazz for a living
-        type: file
-        path: site/src/content/home-jazz.md
-        format: yaml-frontmatter
-        fields:
-          - name: body
-            label: Text
-            type: rich-text
-            options:
-              format: markdown
-              media: false
-      - name: pricing-when
-        label: Pricing — when lessons happen
-        type: file
-        path: site/src/content/pricing-when.md
-        format: yaml-frontmatter
-        fields:
-          - name: body
-            label: Text
-            type: rich-text
-            options:
-              format: markdown
-              media: false
+          - name: day
+            label: Day
+            type: string
+          - name: hours
+            label: Hours
+            type: string
+            description: e.g. 10am to 8pm
+      - name: note
+        label: Note under the times
+        type: text
