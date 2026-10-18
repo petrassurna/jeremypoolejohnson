@@ -1,0 +1,62 @@
+{%- set page_data = pages[pageKey] -%}
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ page_data.seo_title }}</title>
+<meta name="description" content="{{ page_data.seo_description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+{% if site.show_prototype_notes %}<div class="proto">Prototype &mdash; built from <b>STRATEGY.md</b>. {{ protoNote or "Placeholder video, testimonials and booking." }}</div>{% endif %}
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="index.html">Jeremy Poole Johnson<span>Piano &middot; {{ site.location }}</span></a>
+    <nav class="site">
+      {%- for item in [["index", "home", "Home"], ["adults", "adults", "For Adults"], ["kids", "kids", "Kids &amp; Teens"], ["pricing", "pricing", "Pricing"], ["about", "about", "About"]] %}
+      <a href="{{ item[0] }}.html"{% if pageKey == item[1] %} aria-current="page"{% endif %}>{{ item[2] | safe }}</a>
+      {%- endfor %}
+      <a class="btn" href="book.html">Book a first lesson</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Jeremy Poole Johnson</h3>
+        <p>Piano lessons in {{ site.location }}, Melbourne.<br>Jazz, contemporary and classical foundations.<br>Beginners to advanced.</p>
+      </div>
+      <div>
+        <h3>Lessons</h3>
+        <ul>
+          <li><a href="adults.html">For adults</a></li>
+          <li><a href="kids.html">Kids &amp; teens</a></li>
+          <li><a href="pricing.html">Pricing &amp; availability</a></li>
+          <li><a href="about.html">About Jeremy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="book.html">Book a first lesson</a></li>
+          <li>Text: {{ site.phone }}</li>
+          <li>{{ site.days }}</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">{% if site.show_prototype_notes %}Prototype site &mdash; placeholder phone number, testimonial and videos. {% endif %}&copy; {{ "now" | year }} Jeremy Poole Johnson.</p>
+  </div>
+</footer>
+</body>
+</html>

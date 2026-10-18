@@ -1,51 +1,22 @@
-<!doctype html>
-<html lang="en-AU">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Adult Piano Lessons in Brunswick West &mdash; Jeremy Poole Johnson</title>
-<meta name="description" content="Piano lessons for adults in Brunswick West, Melbourne. Beginners and returners welcome. No exams, no scales for the sake of scales. Jazz, chords and playing by ear.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="proto">Prototype &mdash; built from <b>STRATEGY.md</b>. Placeholder video, testimonials and booking.</div>
-
-<header class="site">
-  <div class="bar">
-    <a class="brand" href="index.html">Jeremy Poole Johnson<span>Piano &middot; Brunswick West</span></a>
-    <nav class="site">
-      <a href="index.html">Home</a>
-      <a href="adults.html" aria-current="page">For Adults</a>
-      <a href="kids.html">Kids &amp; Teens</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a class="btn" href="book.html">Book a first lesson</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
+---
+layout: base.njk
+pageKey: adults
+permalink: adults.html
+---
 <section class="hero">
   <div class="wrap">
-    <h1>Piano lessons for adults.</h1>
-    <p class="lede">Whether you played as a child and stopped, or never touched one in your life &mdash; this is the page for you.</p>
+    <h1>{{ pages.adults.heading }}</h1>
+    <p class="lede">{{ pages.adults.intro }}</p>
     <div class="btn-row">
-      <a class="btn" href="book.html">Book a first lesson &mdash; $50</a>
+      <a class="btn" href="book.html">Book a first lesson &mdash; {{ lessons.first.price }}</a>
     </div>
   </div>
 </section>
 
 <section class="tight">
   <div class="wrap narrow">
-    <div class="video">
-      <div class="play">&#9654;</div>
-      <b>Video 2 &mdash; The First Month Demo</b>
-      <small>What you could be playing in four weeks. Three chords and a blues.</small>
-    </div>
+    {% set video_url = videos.first_month %}{% set video_title = "Video 2 &mdash; The First Month Demo" %}{% set video_note = "What you could be playing in four weeks. Three chords and a blues." %}
+    {% include "partials/video.njk" %}
   </div>
 </section>
 
@@ -68,18 +39,18 @@
     <h2>What a lesson actually looks like</h2>
     <div class="grid g2">
       <div>
-        <p>An hour, at my place in Brunswick West, on a real acoustic piano.</p>
+        <p>An hour, at my place in {{ site.location }}, on a real acoustic piano.</p>
         <p>We usually start with whatever you&rsquo;ve been working on &mdash; you play it, I listen, we fix the bit that&rsquo;s annoying you. Then we take the next step towards whatever tune you&rsquo;re aiming at, and I&rsquo;ll usually show you something small about how the harmony works, because that&rsquo;s the part that makes everything else easier.</p>
         <p>You leave with one or two specific things to try. Not a list.</p>
         <p>It&rsquo;s a conversation more than a class. If something isn&rsquo;t working, say so and we&rsquo;ll do it another way.</p>
       </div>
       <div class="card">
         <h3>Practicalities</h3>
-        <p><strong>Where:</strong> my home studio, Brunswick West<br>
-        <strong>When:</strong> Wednesday to Friday, daytime or evening<br>
-        <strong>How long:</strong> 60 minutes<br>
-        <strong>Cost:</strong> $100, or $450 for five<br>
-        <strong>First lesson:</strong> 45 minutes, $50<br>
+        <p><strong>Where:</strong> my home studio, {{ site.location }}<br>
+        <strong>When:</strong> {{ site.days }}, daytime or evening<br>
+        <strong>How long:</strong> {{ lessons.adult.length | replace(" min", " minutes") }}<br>
+        <strong>Cost:</strong> {{ lessons.adult.price }}, or {{ lessons.block.price }} for five<br>
+        <strong>First lesson:</strong> {{ lessons.first.length | replace(" min", " minutes") }}, {{ lessons.first.price }}<br>
         <strong>Online:</strong> available when you&rsquo;re sick, travelling, or the weather is terrible</p>
       </div>
     </div>
@@ -129,11 +100,8 @@
         <p>Improvising. Reading a lead sheet. Working out a tune by ear. Understanding why a ii&ndash;V&ndash;I sounds the way it does and then using it. Reharmonising something you already know so it sounds like your version.</p>
         <p>You don&rsquo;t need to be advanced to start &mdash; a blues is three chords and you can improvise over it in your first month. But if you already play a bit and want to go deep into harmony, composition and improvisation, that&rsquo;s the best conversation you can have with me.</p>
       </div>
-      <div class="video">
-        <div class="play">&#9654;</div>
-        <b>Video 3 &mdash; Him Playing</b>
-        <small>A standard, one take.</small>
-      </div>
+      {% set video_url = videos.playing %}{% set video_title = "Video 3 &mdash; Him Playing" %}{% set video_note = "A standard, one take." %}
+    {% include "partials/video.njk" %}
     </div>
   </div>
 </section>
@@ -141,7 +109,7 @@
 <section>
   <div class="wrap narrow" style="text-align:center">
     <h2>Come and have a go</h2>
-    <p class="lede" style="margin:0 auto">45 minutes, $50, no obligation.</p>
+    <p class="lede" style="margin:0 auto">{{ lessons.first.length | replace(" min", " minutes") }}, {{ lessons.first.price }}, no obligation.</p>
     <div class="btn-row" style="justify-content:center">
       <a class="btn" href="book.html">Book a first lesson</a>
       <a class="btn ghost" href="pricing.html">See availability</a>
@@ -149,36 +117,3 @@
     <p class="reassure">&ldquo;Haven&rsquo;t played in twenty years? That&rsquo;s most of my students.&rdquo;</p>
   </div>
 </section>
-
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <h3>Jeremy Poole Johnson</h3>
-        <p>Piano lessons in Brunswick West, Melbourne.<br>Jazz, contemporary and classical foundations.<br>Beginners to advanced.</p>
-      </div>
-      <div>
-        <h3>Lessons</h3>
-        <ul>
-          <li><a href="adults.html">For adults</a></li>
-          <li><a href="kids.html">Kids &amp; teens</a></li>
-          <li><a href="pricing.html">Pricing &amp; availability</a></li>
-          <li><a href="about.html">About Jeremy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Get in touch</h3>
-        <ul>
-          <li><a href="book.html">Book a first lesson</a></li>
-          <li>Text: 0400 000 000</li>
-          <li>Wednesday to Friday</li>
-        </ul>
-      </div>
-    </div>
-    <p class="fine">Prototype site &mdash; placeholder phone number, testimonial and videos. &copy; 2026 Jeremy Poole Johnson.</p>
-  </div>
-</footer>
-</body>
-</html>

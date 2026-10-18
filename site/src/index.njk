@@ -1,0 +1,141 @@
+---
+layout: base.njk
+pageKey: home
+permalink: index.html
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ pages.home.heading }}</h1>
+    <p class="lede">{{ pages.home.intro }}</p>
+    <ul class="meta">
+      <li>{{ site.location }}</li>
+      <li>{{ site.days }}</li>
+      <li>Daytime &amp; evening</li>
+      <li>{{ lessons.adult.price }} per hour</li>
+      <li>First lesson {{ lessons.first.price }}</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn" href="book.html">Book a first lesson</a>
+      <a class="btn ghost" href="adults.html">What a lesson is like</a>
+    </div>
+    <p class="reassure">&ldquo;Haven&rsquo;t played in twenty years? That&rsquo;s most of my students.&rdquo;</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap narrow">
+    {% set video_url = videos.welcome %}{% set video_title = "Video 1 &mdash; The Welcome" %}{% set video_note = "60&ndash;90s, face to camera at the piano. The highest-converting asset on the site. See VIDEO-BRIEF.md." %}
+    {% include "partials/video.njk" %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Most people who contact me start with an apology.</h2>
+    <p class="lede">They haven&rsquo;t played since school. They think they&rsquo;ve left it too late. They&rsquo;re worried about wasting a professional&rsquo;s time.</p>
+    <p class="lede">None of that is a problem. It&rsquo;s just what starting looks like.</p>
+    <ul class="nots">
+      <li>No exams, unless you actually want one.</li>
+      <li>No scales for the sake of scales.</li>
+      <li>No recitals.</li>
+      <li>No requirement to read music.</li>
+      <li>No being told off for not practising enough.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it actually works</h2>
+    <div class="grid g3">
+      <div class="card">
+        <span class="num">One</span>
+        <h3>We find out what you want to play</h3>
+        <p>A song, a style, an old piece you never finished. That&rsquo;s the target, and everything we do points at it.</p>
+      </div>
+      <div class="card">
+        <span class="num">Two</span>
+        <h3>We start with chords</h3>
+        <p>Not five years of notation first. Chords mean you&rsquo;re making something that sounds like music in the first few weeks.</p>
+      </div>
+      <div class="card">
+        <span class="num">Three</span>
+        <h3>Technique arrives as you need it</h3>
+        <p>Reading, theory, fingering &mdash; all of it comes in when it solves a problem you actually have. That way it sticks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap narrow">
+    {% set video_url = videos.first_month %}{% set video_title = "Video 2 &mdash; The First Month Demo" %}{% set video_note = "Three chords, a twelve-bar blues, and some restrained improvising. Proof the promise is real." %}
+    {% include "partials/video.njk" %}
+    <p class="reassure" style="text-align:center">Three chords. Most adult students are playing this inside about a month.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>I play jazz for a living</h2>
+    <div class="grid g2">
+      <div>
+        {% prose "home-jazz" %}
+        <p><a href="about.html">More about me &rarr;</a></p>
+      </div>
+      {% set video_url = videos.playing %}{% set video_title = "Video 3 &mdash; Him Playing" %}{% set video_note = "One take, no talking. A standard, played beautifully. Deliberately placed <em>below</em> the welcome video." %}
+      {% include "partials/video.njk" %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it costs</h2>
+    <p class="lede">Published, because you shouldn&rsquo;t have to send an email to find out whether you can afford it.</p>
+    <table class="rates">
+      <tr><th>Lesson</th><th>Length</th><th>Price</th></tr>
+      {%- for key in ["first", "adult", "child", "block"] %}
+      {% set lesson = lessons[key] %}{% include "partials/rate-row.njk" %}
+      {%- endfor %}
+    </table>
+    <p style="margin-top:1.5rem"><a href="pricing.html">Full pricing and availability &rarr;</a></p>
+  </div>
+</section>
+
+{%- set quote = (testimonials | forPage("home"))[0] %}
+{%- if quote %}
+<section class="band">
+  <div class="wrap narrow">
+    <blockquote class="pull">
+      &ldquo;{{ quote.quote }}&rdquo;
+      <cite>{{ quote.name }}</cite>
+    </blockquote>
+  </div>
+</section>
+{%- endif %}
+
+<section>
+  <div class="wrap">
+    <h2>The questions people are too polite to ask</h2>
+    <div class="faq">
+      {%- for faq in faqs %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ faq.question }}</summary>
+        <div class="a">{{ faq.answer | md | safe }}</div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap narrow" style="text-align:center">
+    <h2>Come and have a go</h2>
+    <p class="lede" style="margin:0 auto">{{ lessons.first.length | replace(" min", " minutes") }}, {{ lessons.first.price }}, no obligation. We&rsquo;ll work out what you want to play and whether we get on.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="book.html">Book a first lesson</a>
+    </div>
+    <p class="reassure">Or text me on {{ site.phone }} &mdash; plenty of people would rather do that.</p>
+  </div>
+</section>

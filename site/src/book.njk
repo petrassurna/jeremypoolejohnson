@@ -1,42 +1,17 @@
-<!doctype html>
-<html lang="en-AU">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Book a First Lesson &mdash; Jeremy Poole Johnson Piano</title>
-<meta name="description" content="Book a 45-minute first piano lesson in Brunswick West, Melbourne. $50, no obligation. Wednesday to Friday, daytime and evening.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="proto">Prototype &mdash; built from <b>STRATEGY.md</b>. This form is not connected; the real one would be Cal.com + Stripe.</div>
-
-<header class="site">
-  <div class="bar">
-    <a class="brand" href="index.html">Jeremy Poole Johnson<span>Piano &middot; Brunswick West</span></a>
-    <nav class="site">
-      <a href="index.html">Home</a>
-      <a href="adults.html">For Adults</a>
-      <a href="kids.html">Kids &amp; Teens</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="about.html">About</a>
-      <a class="btn" href="book.html" aria-current="page">Book a first lesson</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
+---
+layout: base.njk
+pageKey: book
+permalink: book.html
+protoNote: "This form is not connected; the real one would be Cal.com + Stripe."
+---
 <section class="hero">
   <div class="wrap">
-    <h1>Book a first lesson</h1>
-    <p class="lede">45 minutes, $50, no obligation. Pick a time that suits you &mdash; you&rsquo;ll get a confirmation straight away.</p>
+    <h1>{{ pages.book.heading }}</h1>
+    <p class="lede">{{ pages.book.intro }}</p>
     <ul class="meta">
-      <li>Wednesday to Friday</li>
-      <li>10am &ndash; 8pm</li>
-      <li>Brunswick West</li>
+      <li>{{ site.days }}</li>
+      <li>{{ site.hours }}</li>
+      <li>{{ site.location }}</li>
     </ul>
   </div>
 </section>
@@ -53,7 +28,7 @@
       </div>
       <div>
         <h2 style="font-size:1.4rem">What happens next</h2>
-        <p>You pick a time and pay the $50. You&rsquo;ll get a confirmation with the address, where to park, and a note saying you don&rsquo;t need to prepare anything &mdash; because you don&rsquo;t.</p>
+        <p>You pick a time and pay the {{ lessons.first.price }}. You&rsquo;ll get a confirmation with the address, where to park, and a note saying you don&rsquo;t need to prepare anything &mdash; because you don&rsquo;t.</p>
         <p>I&rsquo;ll send a reminder the day before.</p>
         <p>Then you turn up, we have a play, and we work out what you&rsquo;re after. That&rsquo;s the whole thing.</p>
         <div class="highlight" style="margin-top:1.5rem">
@@ -121,47 +96,14 @@
     <div class="grid g2">
       <div class="card">
         <h3>Text me</h3>
-        <p><strong>0400 000 000</strong></p>
+        <p><strong>{{ site.phone }}</strong></p>
         <p>Genuinely the easiest option, and plenty of people prefer it. I&rsquo;ll usually reply the same day.</p>
       </div>
       <div class="card">
         <h3>Where I am</h3>
-        <p><strong>Brunswick West, VIC</strong></p>
+        <p><strong>{{ site.location }}, VIC</strong></p>
         <p>Full address comes with your booking confirmation. Street parking is easy, and it&rsquo;s a short walk from the tram.</p>
       </div>
     </div>
   </div>
 </section>
-
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <div class="cols">
-      <div>
-        <h3>Jeremy Poole Johnson</h3>
-        <p>Piano lessons in Brunswick West, Melbourne.<br>Jazz, contemporary and classical foundations.<br>Beginners to advanced.</p>
-      </div>
-      <div>
-        <h3>Lessons</h3>
-        <ul>
-          <li><a href="adults.html">For adults</a></li>
-          <li><a href="kids.html">Kids &amp; teens</a></li>
-          <li><a href="pricing.html">Pricing &amp; availability</a></li>
-          <li><a href="about.html">About Jeremy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Get in touch</h3>
-        <ul>
-          <li><a href="book.html">Book a first lesson</a></li>
-          <li>Text: 0400 000 000</li>
-          <li>Wednesday to Friday</li>
-        </ul>
-      </div>
-    </div>
-    <p class="fine">Prototype site &mdash; placeholder phone number, testimonial and videos. &copy; 2026 Jeremy Poole Johnson.</p>
-  </div>
-</footer>
-</body>
-</html>

@@ -1,0 +1,8 @@
+{
+  "first": { "name": "First lesson", "note": "No obligation, and not a sales pitch", "length": "45 min", "price": "$50" },
+  "adult": { "name": "Adults", "note": "", "length": "60 min", "price": "$100" },
+  "child": { "name": "Children", "note": "", "length": "30 min", "price": "$50" },
+  "teen": { "name": "Teenagers", "note": "", "length": "30 or 60 min", "price": "$50 / $100" },
+  "block": { "name": "Block of five", "note": "Paid up front, use them when you like", "length": "60 min each", "price": "$450" },
+  "online": { "name": "Online lesson", "note": "Same rate — for travel, illness or bad weather", "length": "60 min", "price": "$100" }
+}

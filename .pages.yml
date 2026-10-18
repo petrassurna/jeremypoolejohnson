@@ -1,0 +1,406 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# Jeremy edits these at app.pagescms.org; every save commits to GitHub and Vercel rebuilds the site.
+
+content:
+  - name: lessons
+    label: Lessons & prices
+    type: file
+    path: site/src/_data/lessons.json
+    format: json
+    fields:
+      - name: first
+        label: First lesson
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+      - name: adult
+        label: Adults
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+      - name: child
+        label: Children
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+      - name: teen
+        label: Teenagers
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+      - name: block
+        label: Block of five
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+      - name: online
+        label: Online lesson
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: note
+            label: Small print under the name (optional)
+            type: string
+          - name: length
+            label: Length
+            type: string
+            description: e.g. 45 min
+          - name: price
+            label: Price
+            type: string
+            description: Include the $ sign, e.g. $50
+  - name: availability
+    label: Available times
+    type: file
+    path: site/src/_data/availability.json
+    format: json
+    fields:
+      - name: times
+        label: Teaching days
+        type: object
+        list: true
+        fields:
+          - name: day
+            label: Day
+            type: string
+          - name: hours
+            label: Hours
+            type: string
+            description: e.g. 10am to 8pm
+      - name: note
+        label: Note under the times
+        type: text
+  - name: site
+    label: Contact & general
+    type: file
+    path: site/src/_data/site.json
+    format: json
+    fields:
+      - name: phone
+        label: Phone number
+        type: string
+      - name: location
+        label: Suburb
+        type: string
+      - name: days
+        label: Teaching days (short)
+        type: string
+        description: Shown in the footer and page summaries, e.g. Wednesday to Friday
+      - name: hours
+        label: Teaching hours (short)
+        type: string
+        description: e.g. 10am – 8pm
+      - name: show_prototype_notes
+        label: Show prototype banner
+        type: boolean
+        description: Turn off when the site goes live
+  - name: videos
+    label: Videos
+    type: file
+    path: site/src/_data/videos.json
+    format: json
+    fields:
+      - name: welcome
+        label: Welcome video (home page)
+        type: string
+        description: Paste a YouTube or Vimeo link. Leave blank to show the placeholder.
+      - name: first_month
+        label: First month demo (home & adults)
+        type: string
+      - name: playing
+        label: Jeremy playing (home
+        adults & about): null
+        type: string
+      - name: testimonial
+        label: Student testimonial video (not shown yet)
+        type: string
+  - name: testimonials
+    label: Testimonials
+    type: file
+    path: site/src/_data/testimonials.json
+    format: json
+    list: true
+    fields:
+      - name: quote
+        label: Quote
+        type: text
+        required: true
+      - name: name
+        label: Who said it
+        type: string
+      - name: page
+        label: Show on
+        type: select
+        options:
+          values:
+            - name: home
+              label: Home page
+            - name: kids
+              label: Kids & teens page
+  - name: faqs
+    label: FAQs (home page)
+    type: file
+    path: site/src/_data/faqs.json
+    format: json
+    list: true
+    fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+        description: Leave a blank line between paragraphs. **bold** and *italic* work.
+  - name: pages
+    label: Page headings & SEO
+    type: file
+    path: site/src/_data/pages.json
+    format: json
+    fields:
+      - name: home
+        label: Home
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: adults
+        label: For adults
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: kids
+        label: Kids & teens
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: pricing
+        label: Pricing
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: about
+        label: About
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: book
+        label: Book
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+  - name: text
+    label: Page text
+    type: group
+    items:
+      - name: about-bio
+        label: About — bio
+        type: file
+        path: site/src/content/about-bio.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: about-how-i-teach
+        label: About — how I teach
+        type: file
+        path: site/src/content/about-how-i-teach.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: about-what-i-teach
+        label: About — what I teach (one per line)
+        type: file
+        path: site/src/content/about-what-i-teach.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: home-jazz
+        label: Home — I play jazz for a living
+        type: file
+        path: site/src/content/home-jazz.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false
+      - name: pricing-when
+        label: Pricing — when lessons happen
+        type: file
+        path: site/src/content/pricing-when.md
+        format: yaml-frontmatter
+        fields:
+          - name: body
+            label: Text
+            type: rich-text
+            options:
+              format: markdown
+              media: false

@@ -1,0 +1,49 @@
+---
+layout: base.njk
+pageKey: about
+permalink: about.html
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ pages.about.heading }}</h1>
+    <p class="lede">{{ pages.about.intro }}</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap narrow">
+    {% set video_url = videos.playing %}{% set video_title = "Video 3 &mdash; Him Playing" %}{% set video_note = "A standard, one continuous take. This is where credibility lives." %}
+    {% include "partials/video.njk" %}
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    {% prose "about-bio" %}
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>How I teach</h2>
+    <div class="grid g2">
+      <div>
+        {% prose "about-how-i-teach" %}
+      </div>
+      <div class="card">
+        <h3>What I teach</h3>
+        {% prose "about-what-i-teach" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow" style="text-align:center">
+    <h2>Come and have a play</h2>
+    <p class="lede" style="margin:0 auto">The first lesson is {{ lessons.first.length | replace(" min", " minutes") }} and {{ lessons.first.price }}. Bring nothing.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="book.html">Book a first lesson</a>
+    </div>
+  </div>
+</section>

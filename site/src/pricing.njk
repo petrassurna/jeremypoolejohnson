@@ -1,0 +1,83 @@
+---
+layout: base.njk
+pageKey: pricing
+permalink: pricing.html
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{{ pages.pricing.heading }}</h1>
+    <p class="lede">{{ pages.pricing.intro }}</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <table class="rates">
+      <tr><th>Lesson</th><th>Length</th><th>Price</th></tr>
+      {%- for key in ["first", "adult", "child", "teen", "block", "online"] %}
+      {% set lesson = lessons[key] %}{% include "partials/rate-row.njk" %}
+      {%- endfor %}
+    </table>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>When lessons happen</h2>
+    <div class="grid g2">
+      <div>
+        {% prose "pricing-when" %}
+      </div>
+      <div class="card">
+        <h3>Available times</h3>
+        <p>{% for t in availability.times %}<strong>{{ t.day }}</strong> &mdash; {{ t.hours }}{% if not loop.last %}<br>
+        {% endif %}{% endfor %}</p>
+        <p style="color:var(--muted);font-size:.94rem;margin-top:1rem">{{ availability.note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The boring but important bits</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Paying</h3>
+        <p>The first lesson is paid when you book. After that, either lesson by lesson or in blocks of five, whichever you prefer. Bank transfer or card.</p>
+      </div>
+      <div class="card">
+        <h3>Cancelling</h3>
+        <p>More than 24 hours&rsquo; notice and we&rsquo;ll reschedule, no charge. Less than that and the lesson is charged, because the slot can&rsquo;t be refilled. Genuine emergencies are genuine emergencies &mdash; just tell me.</p>
+      </div>
+      <div class="card">
+        <h3>Holidays</h3>
+        <p>I don&rsquo;t charge for weeks you&rsquo;re away, as long as I know in advance. I take a few weeks off a year and you&rsquo;ll get plenty of notice.</p>
+      </div>
+      <div class="card">
+        <h3>No lock-in</h3>
+        <p>There&rsquo;s no contract and no term commitment. If it isn&rsquo;t working, stop &mdash; though I&rsquo;d appreciate being told rather than ghosted, and I promise not to make it awkward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap narrow">
+    <h2>Why the first lesson isn&rsquo;t free</h2>
+    <div class="highlight">
+      <p>Because free trials waste the thing I have least of, which is evenings.</p>
+      <p>It&rsquo;s {{ lessons.first.price }} for {{ lessons.first.length | replace(" min", " minutes") }} &mdash; half my usual rate. You get a real lesson, not a consultation, and you&rsquo;ll leave able to play something you couldn&rsquo;t before. If we&rsquo;re not a good fit, that&rsquo;s completely fine and there&rsquo;s no follow-up sales pitch.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow" style="text-align:center">
+    <h2>Ready when you are</h2>
+    <div class="btn-row" style="justify-content:center">
+      <a class="btn" href="book.html">Book a first lesson</a>
+    </div>
+    <p class="reassure">Or text me on {{ site.phone }} with a question first. That&rsquo;s completely normal.</p>
+  </div>
+</section>

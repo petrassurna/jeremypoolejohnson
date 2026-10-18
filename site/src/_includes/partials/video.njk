@@ -1,0 +1,10 @@
+{#- Usage: set video_url, video_title, video_note (placeholder text shown until a URL is added) -#}
+{%- if video_url -%}
+<div class="video has-embed"><iframe src="{{ video_url | embedUrl }}" title="{{ video_title | safe }}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+{%- else -%}
+<div class="video">
+  <div class="play">&#9654;</div>
+  <b>{{ video_title | safe }}</b>
+  <small>{{ video_note | safe }}</small>
+</div>
+{%- endif -%}
