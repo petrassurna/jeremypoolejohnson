@@ -2,6 +2,120 @@
 # Jeremy edits these at app.pagescms.org; every save commits to GitHub and Vercel rebuilds the site.
 
 content:
+  - name: pages
+    label: Page headings & SEO
+    type: file
+    path: site/src/_data/pages.json
+    format: json
+    fields:
+      - name: home
+        label: Home
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: adults
+        label: For adults
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: kids
+        label: Kids & teens
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: pricing
+        label: Pricing
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: about
+        label: About
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
+      - name: book
+        label: Book
+        type: object
+        fields:
+          - name: heading
+            label: Big heading
+            type: string
+          - name: intro
+            label: Intro line under the heading
+            type: text
+          - name: seo_title
+            label: Google title
+            type: string
+            description: Shown in search results and the browser tab. Keep under ~60 characters.
+          - name: seo_description
+            label: Google description
+            type: text
+            description: Shown under the title in search results. Keep under ~155 characters.
   - name: lessons
     label: Lessons & prices
     type: file
@@ -230,120 +344,6 @@ content:
         type: text
         required: true
         description: Leave a blank line between paragraphs. **bold** and *italic* work.
-  - name: pages
-    label: Page headings & SEO
-    type: file
-    path: site/src/_data/pages.json
-    format: json
-    fields:
-      - name: home
-        label: Home
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
-      - name: adults
-        label: For adults
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
-      - name: kids
-        label: Kids & teens
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
-      - name: pricing
-        label: Pricing
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
-      - name: about
-        label: About
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
-      - name: book
-        label: Book
-        type: object
-        fields:
-          - name: heading
-            label: Big heading
-            type: string
-          - name: intro
-            label: Intro line under the heading
-            type: text
-          - name: seo_title
-            label: Google title
-            type: string
-            description: Shown in search results and the browser tab. Keep under ~60 characters.
-          - name: seo_description
-            label: Google description
-            type: text
-            description: Shown under the title in search results. Keep under ~155 characters.
   - name: text
     label: Page text
     type: group
