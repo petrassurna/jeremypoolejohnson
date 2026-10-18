@@ -279,8 +279,7 @@ content:
         label: First month demo (home & adults)
         type: string
       - name: playing
-        label: Jeremy playing (home
-        adults & about): null
+        label: Jeremy playing (home, adults & about)
         type: string
       - name: testimonial
         label: Student testimonial video (not shown yet)
