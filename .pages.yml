@@ -163,6 +163,10 @@ content:
         label: Teaching hours (short)
         type: string
         description: e.g. 10am – 8pm
+      - name: times_of_day
+        label: Times of day (short)
+        type: string
+        description: Shown under the home page heading, e.g. Daytime & evening
       - name: show_prototype_notes
         label: Show prototype banner
         type: boolean
